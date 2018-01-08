@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx,tikz}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{boondox-cal}
+\title{ }
+
+\newtheorem*{thm}{Theorem}
+
+\begin{document}
+	%\maketitle
+	%\date
+	\begin{center}	% centers
+		\Large{MATH 108A Review Sheet}	% Large makes the font larger, put title inside { }
+	\end{center}
+	\begin{center}
+		Vincent La \\
+		Math 108A \\
+		March 20, 2017
+	\end{center}
+
+\section*{1. Vector Spaces}
+\subsection*{1.A}
+\begin{enumerate}
+	\item A complex number is an ordered pair $(a, b)$ of real numbers $a, b \in \mathbb{R}$ that we write \rule[0ex]{1in}{0.5pt}
+	\item Suppose we have $\alpha, \beta \in \mathbb{C}$ such that
+	\[\alpha := a + bi \]
+	\[\beta := c + di \]
+	What is $\alpha \cdot \beta?$
+	\item If $a \in \mathbb{R}$ then if $b \in \mathbb{R}$ is the multiplicative inverse of a, $a \cdot b = $ \rule[0ex]{1in}{0.5pt}
+	\item Two lists of vectors are considered the same if they have the same length and \rule[0ex]{1in}{0.5pt}
+\end{enumerate} 
+\subsection*{1.B}
+\begin{enumerate}
+	\item A \rule[0ex]{1in}{0.5pt} is a set with two operations \rule[0ex]{2in}{0.5pt} and \rule[0ex]{2in}{0.5pt} such that the operations are commutative, \rule[-0ex]{2in}{0.5pt}, and distributive and both have identity and inverse elements.
+	\item A \rule[0ex]{2in}{0.5pt} over a field $\mathbb{F}$ is a set $V$ with two operations
+		\begin{itemize}
+			\item Vector addition $+$
+			\item Scalar multiplication $\cdot$
+		\end{itemize}
+	\item In general, is there a such thing as multiplication between vectors?
+	\item An element of a vector space is called a \rule[0ex]{1in}{0.5pt}
+	\item What is the trivial vector space?
+	\item The set $F^{\infty}$ is the set of \rule[0ex]{1.5in}{0.5pt}
+	\item The set $\mathbb{R}^{\mathbb{R}}$ is the set of \rule[0ex]{2in}{0.5pt}
+	\item What are the sets $\mathbb{R}^n, \mathbb{C}^n,$ and $\mathbb{F}^n$?
+\end{enumerate}
+\subsection*{1.C}
+\begin{enumerate}
+	\item Subspace Test
+	\begin{enumerate}
+		\item In English, explain the \rule[0ex]{0.5in}{0.5pt} conditions of the Subspace Test.
+		\item Write out the Subspace Test using logical symbols.
+	\end{enumerate}
+	\item Suppose that $U_1, U_2, ... U_m$ are subspaces of $V$ such that
+	\[0 = u_1 + u_2 + ... + u_m \]
+	where $u_1 \in U_1, ..., u_m \in U_m$, has a unique solution.
+	
+	Then we can say that \rule[0ex]{2in}{0.5pt} (not talking about linear independence).
+	\begin{enumerate}
+		\item And what specifically is the value of these $u_i$?
+	\end{enumerate}
+	
+	\item If $U + W$ are subspaces of $V$, then $U + W$ is a direct sum if and only if \rule[0ex]{1in}{0.5pt}
+	
+	\item Let $v_1, v_2, ..., v_m$ be a list of vectors in $V$. Then, span($v_1, v_2, ..., v_m$) is a \rule[0ex]{1in}{0.5pt} of $V$.
+	
+	\item Let $U_1, U_2, U_3$ be subspaces of $V$ such that $U_1 \cap U_2 \cap U_3 = \{0\}$ and that $U_1 + U_2 + U_3 = V$. Can we conclude that $U_1 \oplus U_2 \oplus U_3 = V$?
+\end{enumerate}
+
+\section*{2. Finite Dimensional Vector Spaces}
+\subsection*{2.A}
+\begin{enumerate}
+	\item The set $\mathcal{P}(\mathbb{F})$ is \rule[0ex]{1in}{0.5pt}-dimensional while $\mathcal{P}_m(\mathbb{F})$ is \rule[0ex]{1in}{0.5pt}-dimensional.
+	
+	\item Two functions $p, q$ are the \textbf{same} if for all $z \in \mathbb{F}$ \rule[0ex]{2in}{0.5pt}.
+	
+	\item Suppose for there exists a $v_j \in$ span$(v_1, v_2, ..., v_n)$. Then, we know that $v_1, v_2, ..., v_j, ..., v_n$ is \rule[0ex]{2in}{0.5pt}.
+	
+	\item True or False. If $a_1v_1 + a_2v_2 + ... + a_mv_m = 0$, given that $a_1 = a_2 = ... = a_m = 0$, then $v_1, v_2, ..., v_m$ are linearly independent.
+\end{enumerate}
+
+\subsection*{2.B}
+\begin{enumerate}
+	\item If a list $v_1, v_2, ..., v_n \in V$ is both linearly independent and spanning, then it is a \rule[0ex]{1in}{0.5pt}.
+	\item If a list is spanning but not a basis, then it is \rule[0ex]{1.5in}{0.5pt}.
+	\item The standard basis for $\mathbb{F}^n$ is the list \rule[0ex]{2in}{0.5pt}
+	\item If a list $v_1, v_2, ..., v_n$ (of length n) is a basis for $V$, then dim $V$ = \rule[0ex]{1in}{0.5pt}.
+	\item If $v_1, v_2, ..., v_j$ is linearly independent in $V$, and $v_1, v_2, ..., v_k$ spans $V$, then j \rule[0ex]{0.25in}{0.5pt} k.
+	
+\end{enumerate}
+
+\subsection*{2.C}
+...
+
+\section*{3. Linear Maps}
+\subsection*{3.A}
+\begin{enumerate}
+	\item A linear map (linear transformation) from $V$ to $W$ is a function $T: V \rightarrow W$ such that 
+	\begin{itemize}
+		\item \rule[0ex]{2in}{0.5pt}
+		\item \rule[0ex]{2in}{0.5pt}
+	\end{itemize}
+\end{enumerate}
+\subsection*{3.B}
+\begin{enumerate}
+	\item Suppose $v_1, v_2, ..., v_n$ is linearly independent in $V$. Do we know that $v_1, v_2, ..., v_n$ can be extended to be a basis for $V$?
+	
+	\item Let $T \in \mathcal{L}(V, W)$. Then,
+	
+	dim $V$ = \rule[0ex]{0.75in}{0.5pt} + \rule[0ex]{0.75in}{0.5pt}.
+	
+	\item Let $T: L \rightarrow W$, be a linear map. Then the \rule[0ex]{1.5in}{0.5pt} of $T$ is the set
+	\[\{v \in V | Tv = 0\}\]
+	
+	\item Does the null space contain the zero vector?
+	
+	\item A linear map $T: V \rightarrow W$ if injective if whenever $u \neq w$, then \rule[0ex]{1in}{0.5pt}
+	
+	\item Prove that $T$ is injective, if and only if null $T = \{\vec{0}\}$.
+	
+	\item If a linear map $T: V \rightarrow W$ is such that range $T = W$ then we say T is \rule[0ex]{1.5in}{0.5pt}.
+\end{enumerate}
+\subsection*{3.C}
+\begin{enumerate}
+	\item $\mathbb{F}^{m, n}$ is the set of all \rule[0ex]{1in}{0.5pt}.
+	\item Suppose $T \in \mathcal{L}(V)$ is such that with respect to the basis $v_1, v_2, v_3$
+	\[\mathcal{M}(T) = 
+	\begin{bmatrix}
+		8 & 0 & 0 \\
+		0 & 5 & 0 \\
+		0 & 0 & 5 \\
+	\end{bmatrix}
+	\]
+	What are $Tv_1, Tv_2, Tv_3$ equal to?
+	Source: Last lecture
+\end{enumerate}
+
+\subsection*{3.D}
+\begin{enumerate}
+	\item Suppose $T \in \mathcal{L}(V, W)$ is such that null $T = \{\vec{0}\}$ and range $T = W$. Then, we know that $T$ is \rule[0ex]{1in}{0.5pt}.
+	
+	\item Let $T \in L(V, W)$ be such there are $R, S \in L(W, V)$ such that $R, S$ are inverses of $T$. Is $R = S$?
+	
+	\item Suppose $T \in L(V, W)$ is invertible. Then, we can say $V$ and $W$ are \rule[0ex]{1in}{0.5pt} and $T$ is \rule[0ex]{1in}{0.5pt}.
+	
+	\item Let $V, W$ be finite-dimensional and isomorphic. Then,
+	\[\rule[0ex]{1in}{0.5pt} = \rule[0ex]{1in}{0.5pt} \]
+	
+	\item Suppose $T$ is a linear function from $\mathbb{R}^3$ to $\mathbb{R}^3$. Then we can say, $T$ is a(n) \rule[0ex]{2in}{0.5pt} on $\mathbb{R}^3$.
+\end{enumerate}
+
+\section*{4. Polynomials}
+\begin{enumerate}
+	\item Let $p(z) = 0$ for all $z \in \mathbb{F}$, i.e. the zero polynomial. Then, deg$(p)$ = \rule[0ex]{0.5in}{0.5pt}.
+	\item Let $p(z) = a_0 + a_1z + a_2z^2 + ... + a_mz^m$ for all $z \in \mathbb{F}$. Then, deg$(p)$ = \rule[0ex]{0.5in}{0.5pt}.
+\end{enumerate}
+
+\section*{5. Eigenvalues, Eigenvectors, and Invariant Subspaces}
+\subsection*{5.A}
+\begin{enumerate}
+	\item Suppose $U$ is a subspace of $V$ and $T \in \mathcal{L}(V)$. If for any $u \in U$, $Tu$ is also in $U$, we say $U$ is...
+	\item Suppose $T$ is a linear operator on $V$. If for some $v \in V$, there is some scalar $\lambda \in \mathbb{F}$ is an eigenvalue (Def 5.5) for $v$, then $Tv = ...$
+	\item Is null $T$ invariant under $T$? Why?
+	\item Is range $T$ invariant under $T$? Why?
+	\item Suppose that $U$ is a one-dimensional subspace invariant under $T$ and $v$ is a basis for $U$. Then $v$ is a(n) \_\_\_\_\_\_ for $T$ and there exists a \_\_ $\in \mathbb{F}$ such that \_\_ = \_\_.
+	\item Suppose that $T \in \mathcal{L}(V)$, when applied to some basis of $V$, gives the following matrix
+	\[
+	\begin{bmatrix}
+		1 & 5 & 3 \\
+		0 & 2 & 1 \\
+		0 & 0 & 0 \\
+	\end{bmatrix}
+	\]
+	
+	Is $T$ invertible?
+	\item Suppose $T \in \mathcal{L}(V)$ with distinct eigenvalues $\lambda_1, \lambda_2, ..., \lambda_m$. Then, we know that the corresponding eigenvectors $v_1, v_2, ... v_m$ are \rule[0ex]{2in}{0.5pt}.
+\end{enumerate}
+\end{document}

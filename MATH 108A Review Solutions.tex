@@ -1,0 +1,257 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx,tikz}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{boondox-cal}
+\title{ }
+
+\newtheorem*{thm}{Theorem}
+
+\begin{document}
+	%\maketitle
+	%\date
+	\begin{center}	% centers
+		\Large{MATH 108A Review Sheet Solutions}	% Large makes the font larger, put title inside { }
+	\end{center}
+	\begin{center}
+		Vincent La \\
+		Math 108A \\
+		March 20, 2017
+	\end{center}
+
+\section*{Solutions to Ch 1}
+\subsection*{1.A $\mathbb{R}^n$ and $\mathbb{C}^n$}
+\begin{enumerate}
+	\item A \textbf{complex number} is an ordered pair $(a, b)$ of real numbers $a, b \in \mathbb{R}$ that we write $a + bi$.
+	\item Suppose we have $\alpha, \beta \in \mathbb{C}$ such that
+	\[\alpha := a + bi \]
+	\[\beta := c + di \]
+	Then $\alpha \cdot \beta = (ac - bd) + (ad + bc)i$
+	\item If $a \in \mathbb{R}$ then if $b \in \mathbb{R}$ is the multiplicative inverse of a, $a \cdot b = 1$
+	\item Two lists of vectors are considered the same if they have the same length and have the same entries/elements in the same order.
+\end{enumerate}
+
+\subsection*{1.B Definition of Vector Space}
+\begin{enumerate}
+	\item A \textbf{field} is a set with two operations \textbf{vector addition} and \textbf{scalar multiplication} such that the operations are commutative, associative, and distributive and both have identity and inverse elements.
+	\item A \textbf{vector space} over a field $\mathbb{F}$ is a set $V$ with two operations
+	\begin{itemize}
+		\item Vector addition $+$
+		\item Scalar multiplication $\cdot$
+	\end{itemize}
+	\item In general, is there a such thing as multiplication between vectors? No.
+	\item An element of a vector space is called a \textbf{vector}.
+	\item The \textbf{trivial vector space} is the set containing the zero vector $\{0\}$.
+	\item The set $F^{\infty}$ is the set of all sequences.
+	\item The set $\mathbb{R}^{\mathbb{R}}$ is the set of continuous real valued functions.
+	\item What are the sets $\mathbb{R}^n, \mathbb{C}^n,$ and $\mathbb{F}^n$?
+	\begin{itemize}
+		\item All lists of real numbers of length $n$
+		\item All lists of complex numbers of length $n$
+		\item All lists of numbers of length $n$
+	\end{itemize}
+	
+	(See pre-midterm review lecture on February 7)
+\end{enumerate}
+
+\subsection*{1.C Subspace}
+\begin{enumerate}
+	\item Subspace Test
+	\begin{enumerate}
+		\item A set $U$ is a subspace of some vector space $V$ if it meets the following three conditions of the Subspace Test
+		\begin{enumerate}
+			\item The zero vector is in $U$.
+			\item $U$ is closed under vector addition.
+			\item $U$ is closed under scalar multiplication.
+		\end{enumerate}
+		\item Write out the Subspace Test using logical symbols.
+		\begin{enumerate}
+			\item $\vec{0} \in U$
+			\item $\forall u_1, u_2 \in U$, $u_1 + u_2 \in U$
+			\item $\forall u \in U$, $\forall \lambda \in \mathbb{F}$, $\lambda \cdot u \in U$.
+		\end{enumerate}
+	\end{enumerate}	
+	\item Suppose that $U_1, U_2, ... U_m$ are subspaces of $V$ such that
+	\[0 = u_1 + u_2 + ... + u_m \]
+	where $u_1 \in U_1, ..., u_m \in U_m$, has a unique solution.
+	
+	Then we can say that $u_1 + u_2 + ... + u_m$ is a \textbf{direct sum}, where $u_i = 0$ for $i = 1, 2, ... m$. 
+	
+	(See textbook).
+	
+	\item If $U + W$ are subspaces of $V$, then $U + W$ is a direct sum if and only if there is a unique way to write zero. (Equivalently, $U + W$ is a direct sum if $U \cap W = \{0\}$.)
+	
+	\item Let $v_1, v_2, ..., v_m$ be a list of vectors in $V$. Then, span($v_1, v_2, ..., v_m$) is a \textbf{subspace} of $V$.
+	
+	\item Let $U_1, U_2, U_3$ be subspaces of $V$ such that $U_1 \cap U_2 \cap U_3 = \{0\}$ and that $U_1 + U_2 + U_3 = V$. Can we conclude that $U_1 \oplus U_2 \oplus U_3 = V$?
+	
+	\bigskip
+	
+	No. See midterm/lecture notes.
+\end{enumerate}
+
+\section*{Solutions to Ch 2}
+\subsection*{2.A Span and Linear Independence}
+\begin{enumerate}
+	\item The set $\mathcal{P}(\mathbb{F})$ is infinite-dimensional while $\mathcal{P}_m(\mathbb{F})$ is finite-dimensional.
+	
+	\item Two functions $p, q$ are the \textbf{same} if for all $z \in \mathbb{F}$ $p(z) = q(z)$ (i.e. they have the same output).
+	
+	\item Suppose for there exists a $v_j \in$ span$(v_1, v_2, ..., v_n)$. Then, we know that $v_1, v_2, ..., v_j, ..., v_n$ is \textbf{linearly dependent}.
+	
+	\item True or False. If $a_1v_1 + a_2v_2 + ... + a_mv_m = 0$, given that $a_1 = a_2 = ... = a_m = 0$, then $v_1, v_2, ..., v_m$ are linearly independent.
+	
+	\bigskip
+	
+	False. This is trivially true for all vectors. We need $a_1 = a_2 = ... = a_m = 0$ to be \textbf{the only} solution to this equation to know that $v_1, v_2, ..., v_m$ are linearly independent. (See after midterm lecture on February 14).
+\end{enumerate}
+
+\subsection*{2.B Bases}
+\begin{enumerate}
+	\item If a list $v_1, v_2, ..., v_n \in V$ is both linearly independent and spanning, then it is a \textbf{basis} for $V$.
+	\item If a list is spanning but not a basis, then it is \textbf{linearly dependent} (and we can drop some vectors to make it a basis). (See Linear Dependence Lemma).
+	\item The standard basis for $\mathbb{F}^n$ is the list 
+	\begin{itemize}
+		\item $(1, 0, 0, ..., 0)$
+		\item $(0, 1, 0, ..., 0)$
+		\item ...
+		\item $(0, 0, 0, ..., 1)$
+	\end{itemize}
+	\item If a list $v_1, v_2, ..., v_n$ (of length n) is a basis for $V$, then dim $V = n$.
+	\item If $v_1, v_2, ..., v_j$ is linearly independent in $V$, and $v_1, v_2, ..., v_k$ spans $V$, then j $\leq$ k. (This is based on the fact that all linear independent lists are either spanning or shorter than a spanning list.)
+\end{enumerate}
+
+\subsection*{2.C}
+...
+
+\section*{Solutions to Ch 3}
+\subsection*{3.A The Vector Space of Linear Maps}
+\begin{enumerate}
+	\item A linear map (linear transformation) from $V$ to $W$ is a function $T: V \rightarrow W$ such that 
+	\begin{itemize}
+		\item $T(u + v) = Tu + Tv$ for all $u, v \in V$
+		\item $\lambda T(u) = T(\lambda u)$ for all $\lambda \in \mathbb{F}$ and $u \in V$
+	\end{itemize}
+\end{enumerate}
+
+\subsection*{3.B Null Space and Range}
+\begin{enumerate}
+	\item Suppose $v_1, v_2, ..., v_n$ is linearly independent in $V$. Do we know that $v_1, v_2, ..., v_n$ can be extended to be a basis for $V$?
+	
+	\bigskip
+	
+	No. This is true if $V$ was finite-dimensional, but we don't know that. (See midterm/beginning of February 14 lecture).
+	
+	\item Let $T \in \mathcal{L}(V, W)$. Then,
+	
+	dim $V$ = dim null $T$ + dim range $T$. (This is the \textbf{Fundamental Theorem of Linear Maps}).
+	
+	\item Let $T: L \rightarrow W$, be a linear map. Then the \textbf{null space} of $T$ is the set
+	\[\{v \in V | Tv = 0\}\]
+	
+	\item Does the null space contain the zero vector?
+	
+	\bigskip
+	
+	Yes. It's also true that the null space is a subspace.
+	
+	\item A linear map $T: V \rightarrow W$ if injective if whenever $u \neq w$, then $Tu \neq Tw$. (From lecture notes. This is the contrapositive of the normal definition of injectivity.)
+	
+	\item Prove that $T$ is injective, if and only if null $T = \{\vec{0}\}$.
+	
+	(See pg. 61 of LADR or February 14 lecture for another version of this proof)
+		
+	\begin{proof}
+		For one direction, suppose that null $T = \{0\}$ and show that T is injective. This implies we want to show that if $Tu = Tv$ then $u = v$.
+		
+		\bigskip
+		
+		So suppose that $Tu = Tv$, implying
+		\[\begin{aligned}
+		Tu &= Tv \\
+		Tu - Tv &= 0 \\
+		T(u - v) &= 0 & \text{Additivity of linear maps} \\
+		u - v &= 0 & \text{Because only $T0 = 0$ as implied by null $T = \{0\}$} \\
+		u = v
+		\end{aligned}\]
+		
+		as we set out to prove.
+		
+		\bigskip
+		
+		Now, for the other direction, suppose that $T$ is injective and show that null $T = \{0\}$.
+		
+		Suppose for a contradiction that null $T$ is bigger than $\{0\}$. That implies there is some $v$ such that $Tv = 0$, but $v \neq 0$. However, because $T0 = Tv$ but $0 \neq v$, $T$ is not injective. So it must be that null $T = \{0\}$.
+		
+		\bigskip
+		
+		This completes the proof.
+	\end{proof}
+
+	\item If a linear map $T: V \rightarrow W$ is such that range $T = W$ then we say T is \textbf{surjective} (or \textbf{onto}).
+\end{enumerate}
+
+\subsection*{3.C Matrices}
+\begin{enumerate}
+	\item $\mathbb{F}^{m, n}$ is the set of all \textbf{m $\times$ n matrices}.
+	\item Suppose $T \in \mathcal{L}(V)$ is such that with respect to the basis $v_1, v_2, v_3$
+	\[\mathcal{M}(T) = 
+	\begin{bmatrix}
+	8 & 0 & 0 \\
+	0 & 5 & 0 \\
+	0 & 0 & 5 \\
+	\end{bmatrix}
+	\]
+	What are $Tv_1, Tv_2, Tv_3$ equal to?
+	
+	\[Tv_1 = 8v_1 + 0v_2 + 0v_3\]
+	\[Tv_2 = 0v_1 + 5v_2 + 0v_3\]
+	\[Tv_3 = 0v_1 + 0v_2 + 5v_3\]
+	
+	Source: Last lecture
+\end{enumerate}
+
+\subsection*{3.D Invertibility and Isomorphic Vector Spaces}
+\begin{enumerate}
+	\item Suppose $T \in \mathcal{L}(V, W)$ is such that null $T = \{\vec{0}\}$ and range $T = W$. Then, we know that $T$ is \textbf{invertible}.
+	
+	\paragraph{Explanation} null $T = \{0\}$ implies $T$ is injective, and range $T = W$ implies $T$ is surjective. Now recall that $T$ is invertible if and only if it it is injective and surjective.
+	
+	\item Let $T \in L(V, W)$ be such there are $R, S \in L(W, V)$ such that $R, S$ are inverses of $T$. Is $R = S$?
+	
+	\bigskip
+	
+	Yes. $R = S$ because inverses are unique.
+	
+	\item Suppose $T \in L(V, W)$ is invertible. Then, we can say $V$ and $W$ are \textbf{isomorphic} and $T$ is \textbf{an isomorphism}.
+	
+	\item Let $V, W$ be finite-dimensional and isomorphic. Then,
+	\[ \text{dim } V = \text{dim } W\]
+	
+	\item Suppose $T$ is a linear function from $\mathbb{R}^3$ to $\mathbb{R}^3$. Then we can say, $T$ is a(n) \textbf{linear operator} on $\mathbb{R}^3$.
+\end{enumerate}
+
+\section*{Solutions to Ch 4}
+\begin{enumerate}
+	\item Let $p(z) = 0$ for all $z \in \mathbb{F}$, i.e. the zero polynomial. Then, deg$(p) = -\infty$.
+	\item Let $p(z) = a_0 + a_1z + a_2z^2 + ... + a_mz^m$ for all $z \in \mathbb{F}$. Then, deg$(p) = m$.
+\end{enumerate}
+
+\section*{Solutions to Ch 5}
+\subsection*{5.A Invariant Subspaces}
+\begin{enumerate}
+	\item Suppose $U$ is a subspace of $V$ and $T \in \mathcal{L}(V)$. If for any $u \in U$, $Tu$ is also in $U$, we say $U$ is \textbf{invariant under $T$.} (Def 5.2: invariant subspace)
+	\item $\lambda v$. 
+	\item By definition, for any $v \in$ null $T$, $Tv = 0$. Because $0 \in $ null $T$, the null space is invariant under $T$.
+	\item Because $T$ maps any vector into its range, range $T$ is invariant under $T$.
+	\item Suppose that $U$ is a one-dimensional subspace invariant under $T$ and $v$ is a basis for $U$. Then $v$ is a(n) eigenvector for $T$ and there exists a scalar $\lambda$ such that $Tv = \lambda v$. (See March 7 lecture notes)
+	\item No, $T$ is not invertible.
+	\paragraph{Theorem 5.30: Determination of invertibility from upper-triangular matrix}
+	Suppose $T \in \mathcal{L}(V)$ has an upper-triangular matrix with respect to some basis of $V$. Then $T$ is invertible if and only if all the entries of the diagonal of that upper-triangular matrix are nonzero.
+	\item Linearly independent.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,265 @@
+\documentclass{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\title{MATH 108B - Study Guide Solutions}
+\author{Vincent La}
+
+\newcommand{\spn}[1]{\text{span}\left(#1\right)}
+\newcommand{\spoly}[1]{\mathcal{P}\left(#1\right)}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\iprod}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\tallb}[1]{\left[#1\right]}
+\newcommand{\tallp}[1]{\left(#1\right)}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+\newcommand{\blank}[1]{\rule[0ex]{#1in}{0.5pt}}
+
+\begin{document}
+
+\maketitle
+
+\section*{MATH 8 Review}
+\paragraph{Fill blanks with logical symbols}
+\begin{enumerate}
+    \item If $P \rightarrow Q$, then the converse is $Q \righarrow P$.
+    \item If $P \rightarrow Q$, then the contrapositive is $\neg Q \rightarrow \neg P$.
+    \item The converse of $P \rightarrow Q$ is true if the following is true: $P \Longleftrightarrow Q$. (iff; if and only if)
+\end{enumerate}
+
+\section*{5. Eigenvalues, Eigenvectors, and Invariant Subspaces}
+\paragraph{Fill in the Blank}
+\begin{enumerate}
+    \item
+\[\begin{bmatrix}
+    4 & 0 & 0 \\
+    0 & 2 & 0 \\
+    0 & 0 & 0
+\end{bmatrix} \]
+
+This is a diagonal (also upper triangular) matrix with eigenvalues 4, 2, and 0.
+
+\item We say a subspace $U$ is \textbf{invariant} under some linear operator $T$, if $T$ maps $U$ back to itself.
+
+More formally, for a $T \in \mathcal{L}$, $U$ is invariant under $T$ if for any $u \in U$, $Tu \in U$.
+
+\item Eigenvectors corresponding to distinct eigenvalues are linearly independent.
+
+\item Suppose we have an operator $T \in \mathcal{L}(V)$ and $v_1, ..., v_n$ is a basis for $V$. Now, suppose
+\[\begin{aligned}
+    Tv_1 &\in \spn{v_1} \\
+    Tv_2 &\in \spn{v_1, v_2} \\
+    ... \\
+    Tv_n &\in \spn{v_1, v_2, ..., v_n}
+\end{aligned}\]
+
+Thus, the matrix of $T$ with respect to $v_1, ..., v_n$ is upper triangular (Theorem 5.26).
+
+\item Suppose $V$ is finite-dimensional. Then $T \in \mathcal{L}(V)$ has at most dim $V$ eigenvalues.
+
+\item Let $T \in \mathcal{L}(V)$, then $T^0 = I$.
+
+\item Let $p(z)$ be a polynomial over the complex numbers. If
+$p(z) = a_0 + a_1z + a_2z^3$ then,
+\[ p(T) = I + a_1T + a_2T^3 \]
+
+(5B - Definition 5.17)
+
+\end{enumerate}
+
+\paragraph{True or False}
+\begin{enumerate}
+    \item Some operator $T \in \mathcal{L}(V)$ is invertible if and only if some matrix of $T$ has distinct values on its diagonal.  \textbf{False. You were asked to provide a counterexample of this on the homework on 5B Exercise 14. Also see Theorem 5.30.}
+    
+    \item Suppose $T \in \mathcal{L}(V)$ has an upper triangular matrix with respect to some basis of $V$. Then, $T$ is diagonalizable if and only all the entries on the diagonal are nonzero. \textbf{True. See Theorem 5.44.}
+    
+    \item Let $T \in \mathcal{L}(V)$ with dim $V$ distinct eigenvalues. Then, 
+    \[ E(\lambda_1, T) \cap ... \cap E(\lambda_n,T) = 0 \]
+    \textbf{True. $V$ is a direct sum of its eigenspaces (Theorem 5.41).}
+\end{enumerate}
+
+\section*{6. Inner Product Spaces}
+\paragraph{Fill in the Blank}
+\begin{enumerate}
+    \item Suppose $\iprod{v}{v} = 0$. Then, $v = \underline{0}$.
+    \item Suppose $U \subset V$. The \textbf{orthogonal complement} of $U$, denoted $U^\perp$ is the set
+    \[ \{ v \in V | \iprod{v}{u} = 0 \forall u \in U \} \]
+    \item Let $v_1, ..., v_n$ be a linearly independent list of vectors where each $\norm{v_i} = 1$ for $i = 1, ... n$. Then, $v_1, ..., v_n$ is a(n) \textbf{orthonormal list}. (We don't know if it's an orthonormal basis because I didn't state the dimension of $V$).
+\end{enumerate}
+
+\subsection*{6A. Inner Products and Norms}
+\paragraph{Inner Products} An inner product on $V$ is a function which maps \textbf{an ordered pair (u, v) of elements in V} to a number in $\mathbb{F}$.
+
+\paragraph{Cauchy-Schwarz Inequality}
+Suppose $u, v \in V$. Then
+\[
+    \abs{\iprod{u}{v}} \leq \norm{u}\norm{v}
+\]
+
+where 
+
+\[
+    \abs{\iprod{u}{v}} = \norm{u}\norm{v}
+\]
+
+if and only if $u$ is a scalar multiple of $v$.
+
+\subsection*{6B. Orthonormal Bases}
+\paragraph{Orthonormal} A \textbf{list of vectors} is orthonormal if each vector in the list has length 1 (normal) and is orthogonal to every other vector in the list.
+
+\paragraph{Example} Consider the standard basis of $\mathbb{R}^3$ $(1, 0, 0), (0, 1, 0), (0, 0, 1)$. Turn this basis into an orthonormal basis. \textbf{This is already an orthonormal basis.}
+
+\paragraph{Proof - An orthonormal list is linearly independent} From Theorem 6.25, we know that 
+\[ \norm{a_1e_1 + ... + a_me_m}^2 = \abs{a_1}^2 + ... + \abs{a_m}^2 \]
+
+Use this to prove that orthonormal lists are linearly independent.
+
+\begin{proof}
+Let $e_1, ..., e_m$ be any orthonormal list. Now, consider the equation
+\[\begin{aligned}
+a_1e_1 + ... + a_me_m &= 0 \\
+\norm{a_1e_1 + ... + a_me_m}^2 &= \norm{0}^2 \\
+\abs{a_1}^2 + ... + \abs{a_n}^2 &= 0 \\
+\end{aligned}\]
+
+which implies that $a_1 = ... = a_n = 0$. In other words, $e_1, ..., e_m$ is linearly independent as desired.
+\end{proof}
+
+(See the beginning of 6B in LADR for a similar proof.)
+
+\paragraph{Theorem 6.30 -- Writing a vector as linear combination of orthonormal basis}
+Suppose $e_1, ..., e_n$ is an orthonormal basis of $V$ and $v \in V$. Then
+\[ v = \iprod{v}{e_1}e_1 +... + \iprod{v}{e_n}e_n \]
+and
+\[ \norm{v}^2 = \abs{\iprod{v}{e_1}}^2 + ... + \abs{\iprod{v}{e}}^2 \]
+
+\textbf{This is a rewrite of a proof in the book}
+
+\begin{proof}
+    Let $e_1, ..., e_n$ be an orthonormal basis of $V$ and $v \in V$ be arbitrary. First, because $e_1, ..., e_n$ is a basis for $V$ there are some scalars $a_1, ..., a_n \in \mathbb{F}$ such that
+    \[
+        v = a_1e_1 + ... + a_ne_n 
+    \]
+    
+    Now, notice for the inner product $\iprod{v}{e_i}$ for $i \in 1, ... n$
+    
+    \[\begin{aligned}
+        \iprod{v}{e_i}
+        &= \iprod{a_1e_1 + ... + a_ie_i + ... + a_ne_n}{e_i} \\
+        &= \iprod{a_1e_1}{e_i} + ... + \iprod{a_ie_i}{e_i} + ... + \iprod{a_ne_n}{e_i} &\text{By additivity} \\
+        &= a_1\iprod{e_1}{e_i} + ... + a_i\iprod{e_i}{e_i} + ... + a_n\iprod{e_n}{e_i} &\text{By homogeneity in the first slot} \\
+        &= 0 + ... + a_i\iprod{e_i}{e_i} + ... + 0 &\text{By orthogonality} \\
+        &= a_i &\text{Because $e_i$ is normal} \\
+    \end{aligned}\]
+    
+    Therefore, it is true that $a_ie_i = \iprod{v}{e_i}{e_i}$ for $i \in 1, ..., n$ and we can write
+    \[ v = \iprod{v}{e_1}e_1 + ... + \iprod{v}{e_n}e_n \]
+    as desired. Furthermore, we can get the second equation by applying Theorem 6.25 to the previous equation.
+\end{proof}
+
+\subsection*{6C. Orthogonal Complements}
+\paragraph{Prove or give a counterexample} Suppose $U \subset V$. Then, $U^\perp$ is a subset of $V$.
+
+\paragraph{Fill in the Blank} Suppose $U$ is a finite-dimensional subspace of $V$, and $v \in V$. Suppose $w \in U$ is such that
+\[ \norm{v - w} \leq \norm{v - u} \]
+
+for any $u \in U$. Then, it must be that $w = P_Uv$ (the orthogonal projection).
+
+\section*{7. Operators on Inner Product Spaces}
+\subsection*{7A. Self-Adjoint and Normal Operators}
+\paragraph{Adjoint} Given $T \in \mathcal{L}(V, W)$, the adjoint is the function $T^*: W \rightarrow V$ such that
+\[\iprod{Tv}{w} = \iprod{v}{T^*w}\]
+
+\paragraph{True or False} Suppose $T \in \mathcal{L}(V, W)$. Then, $T^*(0) = 0$. \textbf{True. The adjoint is a linear map and all linear maps send 0 to 0.}
+
+\paragraph{Matrix of the Adjoint}
+Suppose 
+\[\mathcal{M}(T) = 
+\begin{bmatrix}
+    i & 1-i \\
+    2 - 3i & 4\\
+\end{bmatrix}
+\]
+then,
+\[\mathcal{M}(T^*) = 
+\begin{bmatrix}
+    -i & 2 + 3i \\
+    1 + i & 4 \\
+\end{bmatrix}
+\]
+
+\paragraph{Fill in the Blank}
+\begin{enumerate}
+    \item An operator $T \in \mathcal{L}(V, W)$ is called
+    \textbf{self-adjoint} if $T = T^*$.
+    
+    \item Suppose $T \in \mathcal{L}(V)$ is self-adjoint with some  eigenvalue $\lambda$. The following equation
+    \[
+        \lambda \norm{v}^2 = \iprod{\lambda v}{v} = 
+        \iprod{Tv}{v} = \iprod{v}{Tv} = \iprod{v}{\lambda v}
+        = \overbar{\lambda}\norm{v}^2
+    \]
+    
+    shows that the eigenvalues of $T$ \textbf{must be real} (Theorem 7.13).
+    
+    \item  Whenever we are discussing the adjoint of $T \in \mathcal{L}(V, W)$, $V, W$ are presumed to be \textbf{finite-dimensional} (See Notation 7.1 at the beginning of chapter 7).
+\end{enumerate}
+
+\paragraph{True or False}
+\begin{enumerate}
+    \item All self-adjoint operators are normal. \textbf{True.} An operator is normal if it commutes with its adjoint, i.e.
+    \[ TT^* = T^*T \]
+    
+    If an operator is self-adjoint then the above equality trivially becomes
+    \[ TT = TT \]
+    \item An operator can be normal but not self-adjoint. \textbf{True. See pg. 212 for an example.}
+\end{enumerate}
+
+\subsection*{7B. The Spectral Theorem}
+\paragraph{The Real Spectral Theorem}
+Suppose $V$ is a vector space over the reals and $T \in \mathcal{L}(V)$. Then, TFAE:
+\begin{enumerate}
+    \item[a.] $T$ is self-adjoint
+    \item[b.] $V$ has an orthonormal basis consisting of eigenvectors of $T$
+    \item[c.] $T$ has a diagonal matrix with respect to some orthonormal basis of $V$
+\end{enumerate}
+
+The following is a proof of $(a) \implies (b)$
+\begin{proof}
+We will prove this using induction. For the base case, let $n = 1$. Clearly, if $T$ is an operator on a one-dimensional subspace $V$, then it maps vectors to scalar multiples of themselves, i.e. $V$ has an orthonormal basis of eigenvectors of $T$ as desired.
+
+\bigskip
+
+Now, for the inductive step assume that $T \in \mathcal{L}(V)$ is self-adjoint and that (a) implies (b) for all $n < \dim{V}$. By Theorem 7.27, we know that there is some $u \in U$ such that $u$ is an eigenvector of $T$. Specifically, choose $u$ such that $\norm{u} = 1$. As a result, $T|_U$ is a one-dimensional invariant subspace of $V$. Furthermore, this implies that ${T|_U}^\perp \in \mathcal{L}(U^\perp)$ is self-adjoint. Furthermore, by the inductive hypothesis, \textbf{$U^perp$ has an orthonormal basis of eigenvectors of T}. Recalling that Theorem 6.47 states that $V = U \oplus U^\perp$, this implies that adding $u$ to the \textbf{orthonormal basis} of $U^\perp$ gives an orthonormal basis for $V$ as desired.
+\end{proof}
+
+\section*{8. Operators on Complex Vector Spaces}
+\subsection*{8A. Generalized Eigenvectors and Nilpotent Operators}
+\paragraph{Why do we care about generalized eigenspaces?}
+As you may recall, we can already decompose some $T \in \mathcal{L}(V)$ into the direct sum of one-dimensional invariant subspaces, i.e.
+\[ V = U_1 \oplus ... \oplus U_n \]
+
+Specifically, each of these $U_i$ is an eigenspace of $V$. So why do we care about generalized eigenspaces, and how do they extend this idea? 
+
+
+\textbf{Not all operators have enough eigenvalues for an eigenspace decomposition. However, all operators over a complex vector space have a generalized eigenspace decomposition (Theorem 8.21).}
+
+\paragraph{True or False}
+\begin{enumerate}
+    \item If $v$ is an eigenvector of $T$, then it is also an generalized eigenvector of $T$. \textbf{True. Recall that $E(\lambda, T) \subset G(\lambda, T)$}.
+
+    \item It's \textbf{true} that the differentiation operator is nilpotent because \textbf{every polynomial of degree $m$ has 0 as its $m + 1^{th}$ derivative}.
+\end{enumerate}
+
+\subsection*{8B. Decomposition of an Operator}
+\paragraph{True or False} Each generalized eigenspace $(T - \lambda_j I)|_{G(\lambda_J, T)}$ is nilpotent. \textbf{True, by definition.}
+
+\subsection*{8D. Jordan Form}
+\paragraph{True or False} A matrix is said to be in \bold{Jordan Form} if it is zero everywhere for square matrices along its diagonal, where all of these square matrices are of the same dimension. \textbf{False, see textbook for counterexamples.}
+
+\end{document}
